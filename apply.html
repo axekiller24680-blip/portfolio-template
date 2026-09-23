@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Website — Student Intake</title>
+  <meta name="description" content="Tell me about yourself and I'll build your personal website.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400&family=Spline+Sans+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --paper:#f7f4ee; --ink:#1a1a1a; --muted:#6a655d; --line:#d8d2c6;
+      --accent:#e8380d; --field:#fff; --ok:#1c7c3f;
+      --sans:'Archivo',system-ui,sans-serif; --serif:'Fraunces',Georgia,serif; --mono:'Spline Sans Mono',monospace;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased}
+    .wrap{max-width:720px;margin:0 auto;padding:40px 20px 80px}
+    .topbar{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:28px}
+    h1{font-family:var(--serif);font-size:clamp(2rem,6vw,3rem);font-weight:600;line-height:1.05;letter-spacing:-.01em;margin-bottom:12px}
+    h1 em{font-style:italic;color:var(--accent)}
+    .lede{color:var(--muted);font-size:1.05rem;max-width:52ch;margin-bottom:6px}
+    .req-note{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin-bottom:32px}
+    fieldset{border:none;border-top:2px solid var(--ink);padding-top:22px;margin-top:36px}
+    legend{font-family:var(--mono);font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding-right:12px}
+    .grp-note{color:var(--muted);font-size:.92rem;margin:6px 0 18px}
+    label{display:block;margin-bottom:18px}
+    .lab{display:block;font-weight:600;font-size:.95rem;margin-bottom:6px}
+    .lab .opt{font-weight:400;color:var(--muted);font-family:var(--mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;margin-left:6px}
+    input[type=text],input[type=email],input[type=url],textarea,select{
+      width:100%;font-family:var(--sans);font-size:1rem;color:var(--ink);background:var(--field);
+      border:1.5px solid var(--line);border-radius:6px;padding:11px 13px;transition:border-color .15s}
+    input:focus,textarea:focus,select:focus{outline:none;border-color:var(--accent)}
+    textarea{resize:vertical;min-height:66px}
+    .proj{border:1.5px solid var(--line);border-radius:10px;padding:18px 18px 2px;margin-bottom:20px;background:#fffdf9}
+    .proj h3{font-family:var(--mono);font-size:.82rem;letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+    .radio-row{display:flex;gap:22px;flex-wrap:wrap;font-size:1rem}
+    .radio-row label{display:flex;align-items:center;gap:8px;margin:0;font-weight:600}
+    .radio-row input{width:auto}
+    .submit{margin-top:40px}
+    button{font-family:var(--mono);font-weight:600;font-size:.9rem;letter-spacing:.05em;text-transform:uppercase;
+      background:var(--ink);color:var(--paper);border:none;border-radius:8px;padding:16px 34px;cursor:pointer;transition:background .15s}
+    button:hover{background:var(--accent)}
+    button:disabled{opacity:.6;cursor:not-allowed}
+    .status{margin-top:16px;font-family:var(--mono);font-size:.85rem;min-height:1.2em}
+    .status.err{color:var(--accent)}
+    .status.ok{color:var(--ok)}
+    .done{display:none;text-align:center;padding:60px 20px}
+    .done h2{font-family:var(--serif);font-size:2rem;font-weight:600;margin-bottom:10px}
+    .done p{color:var(--muted)}
+    .banner{background:#fff4e5;border:1.5px solid #e8b34d;border-radius:8px;padding:12px 14px;font-size:.88rem;margin-bottom:26px;font-family:var(--mono);color:#8a5a00}
+    .footer{font-family:var(--mono);font-size:.7rem;color:var(--muted);text-align:center;margin-top:50px;border-top:1px solid var(--line);padding-top:18px;letter-spacing:.05em}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar"><span>INTAKE — ISSUE 01</span><span>PERSONAL WEBSITE</span></div>
+
+    <form id="intakeForm" novalidate>
+      <h1>Let's build <em>your</em> website.</h1>
+      <p class="lede">Answer what you can and skip the rest — don't worry about wording, I'll polish it. The more you say about your projects, the better your site turns out.</p>
+      <p class="req-note">* = the only required field is your name & email so I can reach you.</p>
+
+      <div id="setupBanner" class="banner" hidden>Preview mode — this form isn't connected yet, so submissions won't be saved. (The owner is finishing setup.)</div>
+
+      <!-- 1. BASICS -->
+      <fieldset>
+        <legend>1 · The basics</legend>
+        <label><span class="lab">Your full name *</span><input type="text" name="name" required></label>
+        <label><span class="lab">How you want your name shown on the site<span class="opt">optional</span></span><input type="text" name="display_name" placeholder="e.g. first + last, or a nickname"></label>
+        <label><span class="lab">School &amp; current grade<span class="opt">optional</span></span><input type="text" name="school" placeholder="e.g. DPS Bangalore East, Grade 11"></label>
+        <label><span class="lab">City / country<span class="opt">optional</span></span><input type="text" name="city"></label>
+        <label><span class="lab">One line that describes you<span class="opt">optional</span></span><input type="text" name="oneliner" placeholder="e.g. Grade 11 student into robotics, debate, and film"></label>
+        <label><span class="lab">What are you working toward right now?<span class="opt">optional</span></span><input type="text" name="working_toward" placeholder="e.g. Class of 2027, applying to universities"></label>
+        <label><span class="lab">Link to your resume/CV (Google Drive or PDF)<span class="opt">optional</span></span><input type="url" name="resume_link" placeholder="paste a link, or leave blank"></label>
+      </fieldset>
+
+      <!-- 2. ABOUT -->
+      <fieldset>
+        <legend>2 · About you</legend>
+        <label><span class="lab">In a few sentences: who are you and what do you genuinely care about?<span class="opt">optional</span></span><textarea name="about_who"></textarea></label>
+        <label><span class="lab">Something you've built, led, or worked on that you're proud of?<span class="opt">optional</span></span><textarea name="about_proud"></textarea></label>
+        <label><span class="lab">What makes your approach or perspective a little different?<span class="opt">optional</span></span><textarea name="about_different"></textarea></label>
+        <label><span class="lab">A short phrase or motto that sums you up<span class="opt">optional</span></span><input type="text" name="motto"></label>
+      </fieldset>
+
+      <!-- 3. PROJECTS -->
+      <fieldset>
+        <legend>3 · Your work / projects</legend>
+        <p class="grp-note">List up to three things — projects, competitions, research, art, events: anything you made or did. Fill what you can; leave a block blank if you have fewer.</p>
+
+        <div class="proj">
+          <h3>Project 1</h3>
+          <label><span class="lab">Title &amp; year<span class="opt">optional</span></span><input type="text" name="p1_title"></label>
+          <label><span class="lab">One sentence: what is it?<span class="opt">optional</span></span><input type="text" name="p1_oneliner"></label>
+          <label><span class="lab">The problem or goal behind it<span class="opt">optional</span></span><textarea name="p1_problem"></textarea></label>
+          <label><span class="lab">What did you actually do?<span class="opt">optional</span></span><textarea name="p1_did"></textarea></label>
+          <label><span class="lab">What did you use? (tools, skills, materials)<span class="opt">optional</span></span><input type="text" name="p1_tools"></label>
+          <label><span class="lab">The result (a number, award, or what you learned)<span class="opt">optional</span></span><input type="text" name="p1_result"></label>
+          <label><span class="lab">A link to show it<span class="opt">optional</span></span><input type="url" name="p1_link"></label>
+        </div>
+
+        <div class="proj">
+          <h3>Project 2</h3>
+          <label><span class="lab">Title &amp; year<span class="opt">optional</span></span><input type="text" name="p2_title"></label>
+          <label><span class="lab">One sentence: what is it?<span class="opt">optional</span></span><input type="text" name="p2_oneliner"></label>
+          <label><span class="lab">The problem or goal behind it<span class="opt">optional</span></span><textarea name="p2_problem"></textarea></label>
+          <label><span class="lab">What did you actually do?<span class="opt">optional</span></span><textarea name="p2_did"></textarea></label>
+          <label><span class="lab">What did you use? (tools, skills, materials)<span class="opt">optional</span></span><input type="text" name="p2_tools"></label>
+          <label><span class="lab">The result (a number, award, or what you learned)<span class="opt">optional</span></span><input type="text" name="p2_result"></label>
+          <label><span class="lab">A link to show it<span class="opt">optional</span></span><input type="url" name="p2_link"></label>
+        </div>
+
+        <div class="proj">
+          <h3>Project 3</h3>
+          <label><span class="lab">Title &amp; year<span class="opt">optional</span></span><input type="text" name="p3_title"></label>
+          <label><span class="lab">One sentence: what is it?<span class="opt">optional</span></span><input type="text" name="p3_oneliner"></label>
+          <label><span class="lab">The problem or goal behind it<span class="opt">optional</span></span><textarea name="p3_problem"></textarea></label>
+          <label><span class="lab">What did you actually do?<span class="opt">optional</span></span><textarea name="p3_did"></textarea></label>
+          <label><span class="lab">What did you use? (tools, skills, materials)<span class="opt">optional</span></span><input type="text" name="p3_tools"></label>
+          <label><span class="lab">The result (a number, award, or what you learned)<span class="opt">optional</span></span><input type="text" name="p3_result"></label>
+          <label><span class="lab">A link to show it<span class="opt">optional</span></span><input type="url" name="p3_link"></label>
+        </div>
+      </fieldset>
+
+      <!-- 4. SKILLS -->
+      <fieldset>
+        <legend>4 · Skills</legend>
+        <p class="grp-note">List your skills in a few loose groups. Anything you're comfortable with counts.</p>
+        <label><span class="lab">Group 1 (e.g. Software / Languages)<span class="opt">optional</span></span><input type="text" name="skills_g1" placeholder="comma-separated"></label>
+        <label><span class="lab">Group 2 (e.g. Creative / Design)<span class="opt">optional</span></span><input type="text" name="skills_g2" placeholder="comma-separated"></label>
+        <label><span class="lab">Group 3 (e.g. Academic / Other)<span class="opt">optional</span></span><input type="text" name="skills_g3" placeholder="comma-separated"></label>
+      </fieldset>
+
+      <!-- 5. RECORD -->
+      <fieldset>
+        <legend>5 · Your record</legend>
+        <p class="grp-note">Education, roles, activities, internships, awards, leadership — rough dates + a one-line description each.</p>
+        <label><span class="lab">Entry 1<span class="opt">optional</span></span><input type="text" name="rec1" placeholder="e.g. 2024 — House Captain, led house to overall trophy"></label>
+        <label><span class="lab">Entry 2<span class="opt">optional</span></span><input type="text" name="rec2"></label>
+        <label><span class="lab">Entry 3<span class="opt">optional</span></span><input type="text" name="rec3"></label>
+        <label><span class="lab">Entry 4<span class="opt">optional</span></span><input type="text" name="rec4"></label>
+      </fieldset>
+
+      <!-- 6. OFF HOURS -->
+      <fieldset>
+        <legend>6 · Outside of school</legend>
+        <p class="grp-note">Two or three hobbies or things you love, with a short line on each.</p>
+        <label><span class="lab">Hobby 1<span class="opt">optional</span></span><input type="text" name="hobby1"></label>
+        <label><span class="lab">Hobby 2<span class="opt">optional</span></span><input type="text" name="hobby2"></label>
+        <label><span class="lab">Hobby 3<span class="opt">optional</span></span><input type="text" name="hobby3"></label>
+      </fieldset>
+
+      <!-- 7. CONTACT -->
+      <fieldset>
+        <legend>7 · Contact</legend>
+        <label><span class="lab">Email *</span><input type="email" name="c_email" required placeholder="so I can reach you"></label>
+        <label><span class="lab">LinkedIn<span class="opt">optional</span></span><input type="url" name="c_linkedin"></label>
+        <label><span class="lab">Instagram<span class="opt">optional</span></span><input type="text" name="c_instagram" placeholder="@handle"></label>
+        <label><span class="lab">GitHub / portfolio<span class="opt">optional</span></span><input type="url" name="c_portfolio"></label>
+      </fieldset>
+
+      <!-- 8. STYLE -->
+      <fieldset>
+        <legend>8 · Look &amp; feel</legend>
+        <p class="grp-note">Which version do you like? I'll show you both regardless.</p>
+        <div class="radio-row">
+          <label><input type="radio" name="style_pref" value="light"> Light</label>
+          <label><input type="radio" name="style_pref" value="dark"> Dark</label>
+          <label><input type="radio" name="style_pref" value="both" checked> Not sure — show me both</label>
+        </div>
+      </fieldset>
+
+      <div class="submit">
+        <button type="submit" id="submitBtn">Send it in ↗</button>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </div>
+    </form>
+
+    <div class="done" id="done">
+      <h2>Got it — thank you!</h2>
+      <p>Your answers are in. I'll be in touch soon with a first look at your site.</p>
+    </div>
+
+    <p class="footer">BUILT BY [YOUR NAME] · POWERED BY A STATIC FORM + GOOGLE SHEETS</p>
+  </div>
+
+  <script>
+    // ==== CONFIG =========================================================
+    // Paste your Google Apps Script Web App URL (ends in /exec) here.
+    const ENDPOINT = '__PASTE_APPS_SCRIPT_EXEC_URL_HERE__';
+    // =====================================================================
+
+    const form = document.getElementById('intakeForm');
+    const btn = document.getElementById('submitBtn');
+    const statusEl = document.getElementById('status');
+    const done = document.getElementById('done');
+    const banner = document.getElementById('setupBanner');
+    const configured = ENDPOINT.indexOf('http') === 0;
+    if (!configured) banner.hidden = false;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      statusEl.className = 'status';
+      statusEl.textContent = '';
+
+      const name = form.name.value.trim();
+      const email = form.c_email.value.trim();
+      if (!name || !email) {
+        statusEl.className = 'status err';
+        statusEl.textContent = 'Please add at least your name and email.';
+        (!name ? form.name : form.c_email).focus();
+        return;
+      }
+      if (!configured) {
+        statusEl.className = 'status err';
+        statusEl.textContent = 'Form not connected yet — check back shortly.';
+        return;
+      }
+
+      btn.disabled = true;
+      statusEl.className = 'status';
+      statusEl.textContent = 'Sending…';
+      try {
+        const data = new URLSearchParams(new FormData(form));
+        // form-urlencoded is a "simple" request → no CORS preflight to Apps Script
+        await fetch(ENDPOINT, { method: 'POST', body: data, mode: 'no-cors' });
+        form.style.display = 'none';
+        done.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } catch (err) {
+        btn.disabled = false;
+        statusEl.className = 'status err';
+        statusEl.textContent = 'Something went wrong — please try again, or email me directly.';
+      }
+    });
+  </script>
+</body>
+</html>
