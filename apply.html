@@ -188,8 +188,9 @@
 
   <script>
     // ==== CONFIG =========================================================
-    // Paste your Google Apps Script Web App URL (ends in /exec) here.
-    const ENDPOINT = '__PASTE_APPS_SCRIPT_EXEC_URL_HERE__';
+    // Submissions are emailed via FormSubmit (no account needed).
+    // First submission triggers a one-time activation email to this address.
+    const ENDPOINT = 'https://formsubmit.co/ajax/siriakshay08@gmail.com';
     // =====================================================================
 
     const form = document.getElementById('intakeForm');
@@ -223,9 +224,16 @@
       statusEl.className = 'status';
       statusEl.textContent = 'Sending…';
       try {
-        const data = new URLSearchParams(new FormData(form));
-        // form-urlencoded is a "simple" request → no CORS preflight to Apps Script
-        await fetch(ENDPOINT, { method: 'POST', body: data, mode: 'no-cors' });
+        const payload = Object.fromEntries(new FormData(form).entries());
+        payload._subject = 'New website intake — ' + name;
+        payload._template = 'table';
+        payload._captcha = 'false';
+        const res = await fetch(ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
         form.style.display = 'none';
         done.style.display = 'block';
         window.scrollTo({ top: 0, behavior: 'smooth' });
