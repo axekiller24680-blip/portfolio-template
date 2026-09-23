@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="ink">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Your Name] — [Tagline]</title>
+  <meta name="description" content="[One line about you — e.g. Grade 11 student in Bangalore, into science, debate, and design.]">
+  <meta property="og:title" content="[Your Name] — Portfolio, Issue 01">
+  <meta property="og:description" content="[Short description of who you are and what you do.]">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23E8380D'/%3E%3Ctext x='32' y='44' font-family='Arial Black,sans-serif' font-size='30' font-weight='900' fill='%23F7F4EE' text-anchor='middle'%3E[XX]%3C/text%3E%3C/svg%3E">
+  <script>
+    // Sample page: force this page's theme so the shared link always opens
+    // in its intended mode. The in-page toggle still switches live.
+    (function () {
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#work">Skip to projects</a>
+
+  <!-- ============ RUNNING HEADER ============ -->
+  <header class="running-header" id="runningHeader" aria-label="Site header">
+    <a class="rh-wordmark" href="#top">[A.K.]</a>
+    <p class="rh-folio mono" id="folioIndicator">000 / 006 — MASTHEAD</p>
+    <div class="rh-actions">
+      <button class="theme-switch mono" id="themeToggle" type="button" role="switch" aria-checked="false" aria-label="Ink theme">
+        <span class="ts-opt ts-ink">INK</span><span class="ts-slash" aria-hidden="true">/</span><span class="ts-opt ts-paper">PAPER</span>
+      </button>
+      <a class="rh-resume mono" href="#" target="_blank" rel="noopener noreferrer">RESUME&nbsp;↗</a>
+    </div>
+    <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+  </header>
+
+  <!-- ============ 000 MASTHEAD ============ -->
+  <section class="masthead" id="top" data-folio="000 / 006 — MASTHEAD">
+    <div class="mast-topbar mono">
+      <span>[YOUR NAME]</span>
+      <span class="mast-topbar-right">PORTFOLIO — ISSUE&nbsp;01&nbsp;&nbsp;·&nbsp;&nbsp;[SCHOOL / GRADE]</span>
+    </div>
+
+    <h1 class="mast-name" aria-label="[Your Name]">
+      <span class="mast-line" aria-hidden="true">[FIRST]</span>
+      <span class="mast-line" aria-hidden="true">[LAST]</span>
+    </h1>
+
+    <p class="mast-dek">[One strong sentence about what you do — e.g. a student exploring <em>science</em>, <em>writing</em>, and <em>design</em>.]</p>
+
+    <div class="mast-meta mono">
+      <span>[CITY, COUNTRY]</span>
+      <span class="mast-open"><span class="pulse-dot" aria-hidden="true"></span>[YOUR STATUS — e.g. CLASS OF 2027]</span>
+      <a href="#" target="_blank" rel="noopener noreferrer">RESUME&nbsp;↗</a>
+    </div>
+    <p class="mast-facts mono">[FACT ONE]&nbsp;&nbsp;·&nbsp;&nbsp;[FACT TWO]&nbsp;&nbsp;·&nbsp;&nbsp;[FACT THREE]&nbsp;&nbsp;·&nbsp;&nbsp;[FACT FOUR]</p>
+
+    <p class="mast-scrollcue mono" aria-hidden="true">SCROLL ↓</p>
+  </section>
+
+  <main>
+
+    <!-- ============ 001 ABOUT ============ -->
+    <section class="section" id="about" data-folio="001 / 006 — THE LEDE">
+      <div class="kicker mono"><span>001 — THE LEDE</span><span>01 / 06</span></div>
+      <h2 class="headline reveal">[A headline about <em>you.</em>]</h2>
+
+      <div class="about-grid">
+        <div class="about-body">
+          <p class="dropcap rise">[Open with a paragraph about who you are and what you care about. Two or three sentences. Make it feel like you, not a resume.]</p>
+          <p class="rise">[A second paragraph — what you've worked on, a project or cause you care about, or what makes your approach different.]</p>
+          <p class="rise">[A short closing line — what you're focused on right now, or what you're looking for.]</p>
+        </div>
+        <aside class="about-margin" aria-label="Quick facts">
+          <div class="margin-row mono"><span class="margin-key">SCHOOL</span><span>[YOUR SCHOOL]</span></div>
+          <div class="margin-row mono"><span class="margin-key">FOCUS</span><span>[YOUR INTERESTS]</span></div>
+          <div class="margin-row mono"><span class="margin-key">ETHOS</span><span>[A FEW WORDS YOU LIVE BY]</span></div>
+          <div class="margin-row mono"><span class="margin-key">STATUS</span><span>[WHAT YOU'RE UP TO]</span></div>
+          <p class="pull-quote">&ldquo;[A line that sums you up.]&rdquo;</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ 002 SELECTED WORK ============ -->
+    <section class="section" id="work" data-folio="002 / 006 — SELECTED WORK">
+      <div class="kicker mono"><span>002 — SELECTED WORK</span><span>02 / 06</span></div>
+      <h2 class="headline reveal">Things I've <em>made.</em></h2>
+
+      <div class="filter-bar">
+        <div class="filter-chips" role="group" aria-label="Filter projects">
+          <button class="chip mono" type="button" data-filter="all" aria-pressed="true">ALL <span class="chip-count"></span></button>
+          <button class="chip mono" type="button" data-filter="cat1" aria-pressed="false">[CATEGORY 1] <span class="chip-count"></span></button>
+          <button class="chip mono" type="button" data-filter="cat2" aria-pressed="false">[CATEGORY 2] <span class="chip-count"></span></button>
+          <button class="chip mono" type="button" data-filter="cat3" aria-pressed="false">[CATEGORY 3] <span class="chip-count"></span></button>
+          <button class="chip chip-stack mono" type="button" id="stackChip" hidden aria-pressed="true"></button>
+        </div>
+        <p class="filter-count mono" id="filterCount" aria-live="polite">04 PROJECTS / 04 SHOWN</p>
+      </div>
+
+      <ol class="work-index" id="workIndex">
+
+        <!-- 01 -->
+        <li class="work-item" data-cat="cat1" data-stack="skill-a skill-b">
+          <details class="work-row" id="p-one">
+            <summary>
+              <span class="row-num mono" aria-hidden="true">01</span>
+              <span class="row-title">[Project One — Short Title]<span class="row-flag mono">FEATURED</span></span>
+              <span class="row-leader" aria-hidden="true"></span>
+              <span class="row-meta mono">[YEAR] · [TOOLS USED]</span>
+              <span class="row-glyph" aria-hidden="true">+</span>
+            </summary>
+            <div class="spread">
+              <div class="spread-fig">
+                <pre class="plate mono" aria-hidden="true" data-plate="one"></pre>
+                <p class="fig-caption mono">FIG. 01 — [ONE-LINE CAPTION]</p>
+              </div>
+              <div class="spread-body">
+                <p class="spread-dek">[One vivid sentence describing this project.]</p>
+                <dl class="case-file">
+                  <div class="case-row"><dt class="mono">PROBLEM</dt><dd>[What problem or question did this tackle?]</dd></div>
+                  <div class="case-row"><dt class="mono">APPROACH</dt><dd>[What did you actually do? Keep it concrete.]</dd></div>
+                  <div class="case-row"><dt class="mono">TOOLS</dt><dd>[What you used to build or make it.]</dd></div>
+                  <div class="case-row"><dt class="mono">OUTCOME</dt><dd>[The result — a number, an award, what you learned.]</dd></div>
+                </dl>
+                <p class="metrics mono"><span>[STAT]</span><span>[STAT]</span><span>[STAT]</span><span>[STAT]</span></p>
+                <p class="spread-links mono">
+                  <a href="#" target="_blank" rel="noopener noreferrer">[LINK] ↗</a>
+                  <a href="#" target="_blank" rel="noopener noreferrer">[LINK] ↗</a>
+                </p>
+              </div>
+            </div>
+          </details>
+        </li>
+
+        <!-- 02 -->
+        <li class="work-item" data-cat="cat2" data-stack="skill-b skill-c">
+          <details class="work-row" id="p-two">
+            <summary>
+              <span class="row-num mono" aria-hidden="true">02</span>
+              <span class="row-title">[Project Two — Short Title]</span>
+              <span class="row-leader" aria-hidden="true"></span>
+              <span class="row-meta mono">[YEAR] · [TOOLS USED]</span>
+              <span class="row-glyph" aria-hidden="true">+</span>
+            </summary>
+            <div class="spread">
+              <div class="spread-fig">
+                <pre class="plate mono" aria-hidden="true" data-plate="two"></pre>
+                <p class="fig-caption mono">FIG. 02 — [ONE-LINE CAPTION]</p>
+              </div>
+              <div class="spread-body">
+                <p class="spread-dek">[One vivid sentence describing this project.]</p>
+                <dl class="case-file">
+                  <div class="case-row"><dt class="mono">PROBLEM</dt><dd>[What problem or question did this tackle?]</dd></div>
+                  <div class="case-row"><dt class="mono">APPROACH</dt><dd>[What did you actually do?]</dd></div>
+                  <div class="case-row"><dt class="mono">TOOLS</dt><dd>[What you used.]</dd></div>
+                  <div class="case-row"><dt class="mono">OUTCOME</dt><dd>[The result.]</dd></div>
+                </dl>
+                <p class="metrics mono"><span>[STAT]</span><span>[STAT]</span><span>[STAT]</span></p>
+                <p class="spread-links mono">
+                  <a href="#" target="_blank" rel="noopener noreferrer">[LINK] ↗</a>
+                </p>
+              </div>
+            </div>
+          </details>
+        </li>
+
+        <!-- 03 -->
+        <li class="work-item" data-cat="cat3" data-stack="skill-a skill-c">
+          <details class="work-row" id="p-three">
+            <summary>
+              <span class="row-num mono" aria-hidden="true">03</span>
+              <span class="row-title">[Project Three — Short Title]</span>
+              <span class="row-leader" aria-hidden="true"></span>
+              <span class="row-meta mono">[YEAR] · [TOOLS USED]</span>
+              <span class="row-glyph" aria-hidden="true">+</span>
+            </summary>
+            <div class="spread">
+              <div class="spread-fig">
+                <pre class="plate mono" aria-hidden="true" data-plate="three"></pre>
+                <p class="fig-caption mono">FIG. 03 — [ONE-LINE CAPTION]</p>
+              </div>
+              <div class="spread-body">
+                <p class="spread-dek">[One vivid sentence describing this project.]</p>
+                <dl class="case-file">
+                  <div class="case-row"><dt class="mono">PROBLEM</dt><dd>[What problem or question did this tackle?]</dd></div>
+                  <div class="case-row"><dt class="mono">APPROACH</dt><dd>[What did you actually do?]</dd></div>
+                  <div class="case-row"><dt class="mono">TOOLS</dt><dd>[What you used.]</dd></div>
+                  <div class="case-row"><dt class="mono">OUTCOME</dt><dd>[The result.]</dd></div>
+                </dl>
+                <p class="metrics mono"><span>[STAT]</span><span>[STAT]</span><span>[STAT]</span></p>
+                <p class="spread-links mono"><span class="status-tag">[STATUS — e.g. IN PROGRESS]</span></p>
+              </div>
+            </div>
+          </details>
+        </li>
+
+        <!-- 04 -->
+        <li class="work-item" data-cat="cat1" data-stack="skill-b">
+          <details class="work-row" id="p-four">
+            <summary>
+              <span class="row-num mono" aria-hidden="true">04</span>
+              <span class="row-title">[Project Four — Short Title]</span>
+              <span class="row-leader" aria-hidden="true"></span>
+              <span class="row-meta mono">[YEAR] · [TOOLS USED]</span>
+              <span class="row-glyph" aria-hidden="true">+</span>
+            </summary>
+            <div class="spread">
+              <div class="spread-fig">
+                <pre class="plate mono" aria-hidden="true" data-plate="four"></pre>
+                <p class="fig-caption mono">FIG. 04 — [ONE-LINE CAPTION]</p>
+              </div>
+              <div class="spread-body">
+                <p class="spread-dek">[One vivid sentence describing this project.]</p>
+                <dl class="case-file">
+                  <div class="case-row"><dt class="mono">PROBLEM</dt><dd>[What problem or question did this tackle?]</dd></div>
+                  <div class="case-row"><dt class="mono">APPROACH</dt><dd>[What did you actually do?]</dd></div>
+                  <div class="case-row"><dt class="mono">TOOLS</dt><dd>[What you used.]</dd></div>
+                  <div class="case-row"><dt class="mono">OUTCOME</dt><dd>[The result.]</dd></div>
+                </dl>
+                <p class="metrics mono"><span>[STAT]</span><span>[STAT]</span><span>[STAT]</span></p>
+                <p class="spread-links mono">
+                  <a href="#" target="_blank" rel="noopener noreferrer">[LINK] ↗</a>
+                </p>
+              </div>
+            </div>
+          </details>
+        </li>
+
+        </ol>
+    </section>
+
+    <!-- ============ 003 CAPABILITIES ============ -->
+    <section class="section" id="capabilities" data-folio="003 / 006 — CAPABILITIES">
+      <div class="kicker mono"><span>003 — CAPABILITIES</span><span>03 / 06</span></div>
+      <h2 class="headline reveal">What I <em>work with.</em></h2>
+      <p class="section-note mono rise">COUNTS ARE LIVE — SELECT A SKILL TO SEE IT IN THE INDEX ABOVE.</p>
+
+      <div class="skills-grid">
+        <div class="skill-group rise">
+          <h3 class="skill-group-title mono">[GROUP ONE]</h3>
+          <ul class="skill-list">
+            <li><button type="button" class="skill mono" data-skill="skill-a">[SKILL A]</button></li>
+            <li><button type="button" class="skill mono" data-skill="skill-b">[SKILL B]</button></li>
+            <li><button type="button" class="skill mono" data-skill="skill-c">[SKILL C]</button></li>
+            <li><span class="skill skill-plain mono">[SKILL]</span></li>
+            <li><span class="skill skill-plain mono">[SKILL]</span></li>
+          </ul>
+        </div>
+        <div class="skill-group rise">
+          <h3 class="skill-group-title mono">[GROUP TWO]</h3>
+          <ul class="skill-list">
+            <li><span class="skill skill-plain mono">[SKILL]</span></li>
+            <li><span class="skill skill-plain mono">[SKILL]</span></li>
+            <li><span class="skill skill-plain mono">[SKILL]</span></li>
+            <li><span class="skill skill-plain mono">[SKILL]</span></li>
+          </ul>
+        </div>
+        <div class="skill-group rise">
+          <h3 class="skill-group-title mono">[GROUP THREE]</h3>
+          <ul class="skill-list">
+            <li><span class="skill skill-plain mono">[SKILL]</span></li>
+            <li><span class="skill skill-plain mono">[SKILL]</span></li>
+            <li><span class="skill skill-plain mono">[SKILL]</span></li>
+            <li><span class="skill skill-plain mono">[SKILL]</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 004 EXPERIENCE ============ -->
+    <section class="section" id="experience" data-folio="004 / 006 — THE RECORD">
+      <div class="kicker mono"><span>004 — THE RECORD</span><span>04 / 06</span></div>
+      <h2 class="headline reveal">The record so <em>far.</em></h2>
+
+      <ol class="ledger">
+        <li class="ledger-row rise">
+          <span class="ledger-when mono">[YEARS]</span>
+          <div class="ledger-what">
+            <h3>[School / Program]</h3>
+            <p>[One line about what you studied or did here.]</p>
+          </div>
+          <span class="ledger-tag mono">EDUCATION</span>
+        </li>
+        <li class="ledger-row rise">
+          <span class="ledger-when mono">[DATES]</span>
+          <div class="ledger-what">
+            <h3>[Activity / Role / Project]</h3>
+            <p>[What you did and what came of it.]</p>
+          </div>
+          <span class="ledger-tag mono">[TAG]</span>
+        </li>
+        <li class="ledger-row rise">
+          <span class="ledger-when mono">[DATES]</span>
+          <div class="ledger-what">
+            <h3>[Activity / Role / Award]</h3>
+            <p>[What you did and what came of it.]</p>
+          </div>
+          <span class="ledger-tag mono">[TAG]</span>
+        </li>
+        <li class="ledger-row rise">
+          <span class="ledger-when mono">[DATES]</span>
+          <div class="ledger-what">
+            <h3>[Leadership / Volunteering / Club]</h3>
+            <p>[What you did and what came of it.]</p>
+          </div>
+          <span class="ledger-tag mono">LEADERSHIP</span>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ 005 OFF HOURS ============ -->
+    <section class="section" id="offhours" data-folio="005 / 006 — OFF HOURS">
+      <div class="kicker mono"><span>005 — OFF HOURS</span><span>05 / 06</span></div>
+      <h2 class="headline reveal">Away from the <em>desk.</em></h2>
+
+      <div class="offhours-grid">
+        <div class="hobby rise">
+          <h3 class="mono">[◆ HOBBY ONE]</h3>
+          <p>[A line about this — why you love it.]</p>
+        </div>
+        <div class="hobby rise">
+          <h3 class="mono">[◆ HOBBY TWO]</h3>
+          <p>[A line about this.]</p>
+        </div>
+        <div class="hobby rise">
+          <h3 class="mono">[◆ HOBBY THREE]</h3>
+          <p>[A line about this.]</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ AVAILABILITY STRIP ============ -->
+    <p class="avail-strip mono" role="note">[ONE-LINE CALL TO ACTION — e.g. OPEN TO OPPORTUNITIES & COLLABORATIONS]</p>
+
+    <!-- ============ 006 CONTACT ============ -->
+    <section class="section section-contact" id="contact" data-folio="006 / 006 — CONTACT">
+      <div class="kicker mono"><span>006 — CONTACT</span><span>06 / 06</span></div>
+      <h2 class="headline reveal">Let's <em>talk.</em></h2>
+
+      <p class="contact-lede rise">[A warm line inviting people to reach out — for opportunities, collaboration, or just to connect.]</p>
+
+      <div class="contact-email rise">
+        <a class="email-big" href="mailto:[you@email.com]">[you@email.com]</a>
+        <button class="copy-email mono" id="copyEmail" type="button" data-email="[you@email.com]">COPY</button>
+        <span class="visually-hidden" id="copyStatus" role="status"></span>
+      </div>
+
+      <ul class="contact-links mono rise">
+        <li><a href="#" target="_blank" rel="noopener noreferrer">[LINKEDIN / INSTAGRAM] ↗</a></li>
+        <li><a href="#" target="_blank" rel="noopener noreferrer">[GITHUB / PORTFOLIO] ↗</a></li>
+        <li><a href="#" target="_blank" rel="noopener noreferrer">RESUME (PDF) ↗</a></li>
+      </ul>
+      <p class="contact-signoff">— [Your Name]</p>
+    </section>
+
+  </main>
+
+  <!-- ============ COLOPHON ============ -->
+  <footer class="colophon mono">
+    <div class="colophon-grid">
+      <p>SET IN ARCHIVO, FRAUNCES &amp; SPLINE SANS MONO.</p>
+      <p>HAND-BUILT — VANILLA HTML / CSS / JS. NO FRAMEWORKS. NO BUILD STEP.</p>
+      <p>© [YEAR] [YOUR NAME] — [CITY]. ISSUE 01.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
