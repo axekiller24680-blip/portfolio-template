@@ -233,10 +233,14 @@
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
           body: JSON.stringify(payload)
         });
-        if (!res.ok) throw new Error('HTTP ' + res.status);
-        form.style.display = 'none';
-        done.style.display = 'block';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        const json = await res.json().catch(() => ({}));
+        if (res.ok && (json.success === 'true' || json.success === true)) {
+          form.style.display = 'none';
+          done.style.display = 'block';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          throw new Error(json.message || ('HTTP ' + res.status));
+        }
       } catch (err) {
         btn.disabled = false;
         statusEl.className = 'status err';
