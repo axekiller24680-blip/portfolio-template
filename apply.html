@@ -20,26 +20,12 @@
     html{scroll-behavior:smooth;scroll-padding-top:32px}
     body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
     ::selection{background:var(--text);color:var(--bg)}
-    .wrap{max-width:1080px;margin:0 auto;padding:72px 24px 96px;display:grid;grid-template-columns:200px minmax(0,1fr);gap:72px}
-
-    /* section index */
-    .index{position:sticky;top:32px;align-self:start}
-    .index p{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:14px}
-    .index ol{list-style:none;border-left:1px solid var(--line)}
-    .index a{display:flex;align-items:center;gap:12px;padding:7px 0 7px 16px;margin-left:-1px;border-left:1px solid transparent;
-      color:var(--muted);text-decoration:none;font-size:14px;transition:color .15s,border-color .15s}
-    .index a:hover{color:var(--text)}
-    .index a.on{color:var(--text);border-left-color:var(--text)}
-    .index .n{font-family:var(--mono);font-size:11px;color:var(--faint);width:18px}
-    .index i{margin-left:auto;width:6px;height:6px;border:1px solid var(--line-2)}
-    .index a.done i{background:var(--ok);border-color:var(--ok)}
+    .wrap{max-width:640px;margin:0 auto;padding:72px 20px 96px}
 
     /* header */
     h1{font-size:clamp(2rem,4.6vw,2.9rem);font-weight:600;line-height:1.08;letter-spacing:-.022em;max-width:18ch}
     .lede{color:var(--muted);font-size:1.06rem;max-width:56ch;margin-top:16px}
-    .req-note{margin-top:24px;padding:12px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
-      font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:center}
-    .req-note .req{margin:0}
+    .req-note{margin-top:14px;font-size:14px;color:var(--muted)}
     .banner{margin-top:20px;border:1px solid var(--line-2);border-left:2px solid var(--req);padding:12px 14px;font-size:14px;color:var(--muted)}
 
     /* sections */
@@ -50,8 +36,7 @@
     .grp-note{color:var(--muted);font-size:15px;margin:-8px 0 22px;max-width:60ch}
     label{display:block;margin-bottom:20px}
     .lab{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:500;color:var(--text);margin-bottom:8px}
-    .req{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--req);
-      border:1px solid color-mix(in srgb,var(--req) 45%,transparent);padding:1px 6px}
+    .req{color:var(--req);font-weight:600}
     input[type=text],input[type=email],input[type=url],textarea{
       width:100%;font:inherit;font-size:15px;color:var(--text);background:var(--field);
       border:1px solid var(--line);border-radius:2px;padding:11px 13px;transition:border-color .15s,background-color .15s}
@@ -61,6 +46,13 @@
     textarea{resize:vertical;min-height:92px}
 
     .proj{border:1px solid var(--line);background:var(--panel);padding:20px 20px 2px;margin-bottom:16px}
+    details.proj{padding:0;background:transparent;border-style:dashed}
+    details.proj[open]{padding:0 20px 2px;background:var(--panel);border-style:solid}
+    details.proj summary{list-style:none;cursor:pointer;padding:14px 20px;font-size:15px;font-weight:500;color:var(--muted)}
+    details.proj[open] summary{padding:18px 0 14px;margin-bottom:18px;border-bottom:1px solid var(--line);color:var(--text)}
+    details.proj summary::-webkit-details-marker{display:none}
+    details.proj summary:hover{color:var(--text)}
+    details.proj summary:focus-visible{outline:1px solid var(--text);outline-offset:2px}
     .proj h3{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);
       margin:0 0 18px;padding-bottom:12px;border-bottom:1px solid var(--line)}
 
@@ -89,10 +81,7 @@
     .done h2{font-size:2rem;font-weight:600;letter-spacing:-.02em;margin-bottom:10px}
     .done p{color:var(--muted);max-width:48ch}
 
-    @media (max-width:860px){
-      .wrap{grid-template-columns:1fr;gap:0;padding:48px 16px 80px}
-      .index{display:none}
-    }
+    @media (max-width:560px){.wrap{padding:48px 16px 80px}}
     @media (max-width:560px){
       .radio-row{grid-template-columns:1fr}
       fieldset{margin-top:52px}
@@ -102,32 +91,18 @@
 </head>
 <body>
   <div class="wrap">
-    <nav class="index" aria-label="Form sections">
-      <p>Sections</p>
-      <ol>
-        <li><a href="#s1"><span class="n">01</span>The basics<i aria-hidden="true"></i></a></li>
-        <li><a href="#s2"><span class="n">02</span>About you<i aria-hidden="true"></i></a></li>
-        <li><a href="#s3"><span class="n">03</span>Your work / projects<i aria-hidden="true"></i></a></li>
-        <li><a href="#s4"><span class="n">04</span>Skills<i aria-hidden="true"></i></a></li>
-        <li><a href="#s5"><span class="n">05</span>Your record<i aria-hidden="true"></i></a></li>
-        <li><a href="#s6"><span class="n">06</span>Outside of school<i aria-hidden="true"></i></a></li>
-        <li><a href="#s7"><span class="n">07</span>Contact<i aria-hidden="true"></i></a></li>
-        <li><a href="#s8"><span class="n">08</span>Look &amp; feel<i aria-hidden="true"></i></a></li>
-      </ol>
-    </nav>
-
     <main>
     <form id="intakeForm" novalidate>
       <h1>Let's build your website.</h1>
       <p class="lede">Answer what you can and skip the rest — don't worry about wording, I'll polish it. The more you say about your projects, the better your site turns out.</p>
-      <p class="req-note"><span class="req">Required</span> Only your name and email. Everything else is optional.</p>
+      <p class="req-note">Only your name and email (marked <span class="req">*</span>) are needed. Skip anything else.</p>
 
       <div id="setupBanner" class="banner" hidden>This form isn't connected yet, so submissions won't be saved. (The owner is finishing setup.)</div>
 
       <!-- 1. BASICS -->
       <fieldset class="sec" id="s1">
-        <legend><span class="n">01</span>The basics</legend>
-        <label><span class="lab">Your full name <span class="req">Required</span></span><input type="text" name="name" required></label>
+        <legend><span class="n" hidden>01</span>The basics</legend>
+        <label><span class="lab">Your full name <span class="req" aria-label="required">*</span></span><input type="text" name="name" required></label>
         <label><span class="lab">How you want your name shown on the site</span><input type="text" name="display_name" placeholder="e.g. first + last, or a nickname"></label>
         <label><span class="lab">School &amp; current grade</span><input type="text" name="school" placeholder="e.g. DPS Bangalore East, Grade 11"></label>
         <label><span class="lab">City / country</span><input type="text" name="city"></label>
@@ -138,7 +113,7 @@
 
       <!-- 2. ABOUT -->
       <fieldset class="sec" id="s2">
-        <legend><span class="n">02</span>About you</legend>
+        <legend><span class="n" hidden>02</span>About you</legend>
         <label><span class="lab">In a few sentences: who are you and what do you genuinely care about?</span><textarea name="about_who"></textarea></label>
         <label><span class="lab">Something you've built, led, or worked on that you're proud of?</span><textarea name="about_proud"></textarea></label>
         <label><span class="lab">What makes your approach or perspective a little different?</span><textarea name="about_different"></textarea></label>
@@ -147,11 +122,11 @@
 
       <!-- 3. PROJECTS -->
       <fieldset class="sec" id="s3">
-        <legend><span class="n">03</span>Your work / projects</legend>
-        <p class="grp-note">List up to three things — projects, competitions, research, art, events: anything you made or did. Fill what you can; leave a block blank if you have fewer.</p>
+        <legend><span class="n" hidden>03</span>Your work / projects</legend>
+        <p class="grp-note">Anything you made or did — a project, competition, research, art or an event. Start with one; add more if you like.</p>
 
         <div class="proj">
-          <h3>Project 01</h3>
+          <h3>Project</h3>
           <label><span class="lab">Title &amp; year</span><input type="text" name="p1_title"></label>
           <label><span class="lab">One sentence: what is it?</span><input type="text" name="p1_oneliner"></label>
           <label><span class="lab">The problem or goal behind it</span><textarea name="p1_problem"></textarea></label>
@@ -161,8 +136,8 @@
           <label><span class="lab">A link to show it</span><input type="url" name="p1_link"></label>
         </div>
 
-        <div class="proj">
-          <h3>Project 02</h3>
+        <details class="proj more">
+          <summary>+ Add a second project</summary>
           <label><span class="lab">Title &amp; year</span><input type="text" name="p2_title"></label>
           <label><span class="lab">One sentence: what is it?</span><input type="text" name="p2_oneliner"></label>
           <label><span class="lab">The problem or goal behind it</span><textarea name="p2_problem"></textarea></label>
@@ -170,10 +145,10 @@
           <label><span class="lab">What did you use? (tools, skills, materials)</span><input type="text" name="p2_tools"></label>
           <label><span class="lab">The result (a number, award, or what you learned)</span><input type="text" name="p2_result"></label>
           <label><span class="lab">A link to show it</span><input type="url" name="p2_link"></label>
-        </div>
+        </details>
 
-        <div class="proj">
-          <h3>Project 03</h3>
+        <details class="proj more">
+          <summary>+ Add a third project</summary>
           <label><span class="lab">Title &amp; year</span><input type="text" name="p3_title"></label>
           <label><span class="lab">One sentence: what is it?</span><input type="text" name="p3_oneliner"></label>
           <label><span class="lab">The problem or goal behind it</span><textarea name="p3_problem"></textarea></label>
@@ -181,12 +156,12 @@
           <label><span class="lab">What did you use? (tools, skills, materials)</span><input type="text" name="p3_tools"></label>
           <label><span class="lab">The result (a number, award, or what you learned)</span><input type="text" name="p3_result"></label>
           <label><span class="lab">A link to show it</span><input type="url" name="p3_link"></label>
-        </div>
+        </details>
       </fieldset>
 
       <!-- 4. SKILLS -->
       <fieldset class="sec" id="s4">
-        <legend><span class="n">04</span>Skills</legend>
+        <legend><span class="n" hidden>04</span>Skills</legend>
         <p class="grp-note">List your skills in a few loose groups. Anything you're comfortable with counts.</p>
         <label><span class="lab">Group 1 (e.g. Software / Languages)</span><input type="text" name="skills_g1" placeholder="comma-separated"></label>
         <label><span class="lab">Group 2 (e.g. Creative / Design)</span><input type="text" name="skills_g2" placeholder="comma-separated"></label>
@@ -195,7 +170,7 @@
 
       <!-- 5. RECORD -->
       <fieldset class="sec" id="s5">
-        <legend><span class="n">05</span>Your record</legend>
+        <legend><span class="n" hidden>05</span>Your record</legend>
         <p class="grp-note">Education, roles, activities, internships, awards, leadership — rough dates + a one-line description each.</p>
         <label><span class="lab">Entry 1</span><input type="text" name="rec1" placeholder="e.g. 2024 — House Captain, led house to overall trophy"></label>
         <label><span class="lab">Entry 2</span><input type="text" name="rec2"></label>
@@ -205,7 +180,7 @@
 
       <!-- 6. OFF HOURS -->
       <fieldset class="sec" id="s6">
-        <legend><span class="n">06</span>Outside of school</legend>
+        <legend><span class="n" hidden>06</span>Outside of school</legend>
         <p class="grp-note">Two or three hobbies or things you love, with a short line on each.</p>
         <label><span class="lab">Hobby 1</span><input type="text" name="hobby1"></label>
         <label><span class="lab">Hobby 2</span><input type="text" name="hobby2"></label>
@@ -214,8 +189,8 @@
 
       <!-- 7. CONTACT -->
       <fieldset class="sec" id="s7">
-        <legend><span class="n">07</span>Contact</legend>
-        <label><span class="lab">Email <span class="req">Required</span></span><input type="email" name="c_email" required placeholder="so I can reach you"></label>
+        <legend><span class="n" hidden>07</span>Contact</legend>
+        <label><span class="lab">Email <span class="req" aria-label="required">*</span></span><input type="email" name="c_email" required placeholder="so I can reach you"></label>
         <label><span class="lab">LinkedIn</span><input type="url" name="c_linkedin"></label>
         <label><span class="lab">Instagram</span><input type="text" name="c_instagram" placeholder="@handle"></label>
         <label><span class="lab">GitHub / portfolio</span><input type="url" name="c_portfolio"></label>
@@ -223,7 +198,7 @@
 
       <!-- 8. STYLE -->
       <fieldset class="sec" id="s8">
-        <legend><span class="n">08</span>Look &amp; feel</legend>
+        <legend><span class="n" hidden>08</span>Look &amp; feel</legend>
         <p class="grp-note">Which version do you like? I'll show you both regardless.</p>
         <div class="radio-row">
           <label class="tile"><input type="radio" name="style_pref" value="light"><span>Light</span></label>
@@ -260,25 +235,6 @@
     const configured = ENDPOINT.indexOf('http') === 0;
     if (!configured) banner.hidden = false;
 
-    // mark sections in the index once any field in them is filled
-    const secs = [...document.querySelectorAll('.sec')];
-    const marks = [...document.querySelectorAll('.index a')];
-    function track() {
-      secs.forEach((sec, k) => {
-        const filled = [...sec.querySelectorAll('input[type=text],input[type=email],input[type=url],textarea')].some(el => el.value.trim());
-        marks[k].classList.toggle('done', filled);
-      });
-    }
-    form.addEventListener('input', track);
-    if ('IntersectionObserver' in window) {
-      const spy = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) marks.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id));
-        });
-      }, { rootMargin: '-35% 0px -60% 0px' });
-      secs.forEach(sec => spy.observe(sec));
-    }
-
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       statusEl.className = 'status';
@@ -314,7 +270,6 @@
         const json = await res.json().catch(() => ({}));
         if (res.ok && (json.success === 'true' || json.success === true)) {
           form.style.display = 'none';
-          document.querySelector('.index').style.display = 'none';
           done.style.display = 'block';
           window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
